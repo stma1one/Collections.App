@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="Collections.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:Models="clr-namespace:BindingToObject.Models"
+    xmlns:local="clr-namespace:Collections"
+    x:DataType="local:MainPage">
+
+    <Grid
+        Margin="15"
+        Padding="15"
+        ColumnDefinitions="*,5*"
+        ColumnSpacing="3"
+        RowDefinitions="*,3*">
+        <Label
+            Grid.ColumnSpan="2"
+            Text="Omer"
+            VerticalOptions="Center" />
+        <Image
+            Grid.Column="1"
+            Margin="15"
+            Aspect="AspectFill"
+            HorizontalOptions="Center"
+            Scale="1.5"
+            Source="omer.jpg" />
+
+    </Grid>
+
+</ContentPage>
