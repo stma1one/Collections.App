@@ -4,27 +4,51 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:Models="clr-namespace:BindingToObject.Models"
-    xmlns:local="clr-namespace:Collections"
-    x:DataType="local:MainPage">
+    x:DataType="Models:Student">
 
-    <Grid
-        Margin="15"
-        Padding="15"
-        ColumnDefinitions="*,5*"
-        ColumnSpacing="3"
-        RowDefinitions="*,3*">
-        <Label
-            Grid.ColumnSpan="2"
-            Text="Omer"
-            VerticalOptions="Center" />
-        <Image
-            Grid.Column="1"
+
+    <VerticalStackLayout>
+
+        <Grid
             Margin="15"
-            Aspect="AspectFill"
-            HorizontalOptions="Center"
-            Scale="1.5"
-            Source="omer.jpg" />
+            Padding="5"
+            ColumnDefinitions="*,*,*"
+            ColumnSpacing="3"
+            RowDefinitions="*,*,*"
+            RowSpacing="3">
+            <Label
+                Grid.Row="1"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
+                FontSize="24"
+                HorizontalOptions="Center"
+                Text="{Binding Name}" />
+            <Label
+                Grid.Row="2"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
+                CharacterSpacing="3"
+                FontSize="Small"
+                HorizontalOptions="Center"
+                Text="{Binding BirthDate, StringFormat='{0:dd/MM/yyyy}'}" />
+            <Border
+                Grid.ColumnSpan="2"
+                Margin="15"
+                FlowDirection="LeftToRight"
+                StrokeShape="RoundRectangle 14,90,90,90"
+                StrokeThickness="12">
 
-    </Grid>
+
+                <Image
+                    Aspect="AspectFit"
+                    HeightRequest="180"
+                    HorizontalOptions="Center"
+                    Source="{Binding Image}"
+                    WidthRequest="180" />
+            </Border>
+        </Grid>
+
+    </VerticalStackLayout>
+
 
 </ContentPage>
